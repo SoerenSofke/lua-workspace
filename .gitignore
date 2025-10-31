@@ -1,0 +1,5 @@
+# Arduino-CLI specific directories
+/bin/
+
+# Compiled files
+*.ino.*
