@@ -9,7 +9,7 @@ curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.
 ./bin/arduino-cli core install esp32:esp32@3.3.2
 
 # Compile Arduino Application
-./bin/arduino-cli compile --output-dir . --fqbn esp32:esp32:esp32s3 Example
+ ./bin/arduino-cli compile --output-dir . --fqbn esp32:esp32:esp32s3 --build-property "build.extra_flags=-Iinclude -Isrc -std=c++17" Example
 
 # Convert Lua-script to C-header
 xxd -i main.lua > main_lua.h
