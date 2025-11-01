@@ -9,7 +9,7 @@
 sol::state lua;
 sol::function add;
 
-Adafruit_NeoPixel pixels(1, PIN_NEOPIXEL, NEO_RGB + NEO_KHZ800);
+Adafruit_NeoPixel pixels(1, PIN_NEOPIXEL, NEO_GRB + NEO_KHZ800);
 
 void setup()
 {
