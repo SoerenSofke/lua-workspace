@@ -8,8 +8,11 @@ curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.
 ./bin/arduino-cli core search --all
 ./bin/arduino-cli core install esp32:esp32@3.3.2
 
+# Bibliotheken installieren
+./bin/arduino-cli lib install "Adafruit NeoPixel"
+
 # Compile Arduino Application
- ./bin/arduino-cli compile --output-dir . --fqbn esp32:esp32:esp32s3 --build-property "build.extra_flags=-Iinclude -Isrc -std=c++17" Example
+ ./bin/arduino-cli compile --output-dir . --fqbn esp32:esp32:adafruit_feather_esp32s3 --build-property "compiler.cpp.extra_flags=-IExample/include -IExample/src -std=c++17" Example
 
 # Convert Lua-script to C-header
 xxd -i main.lua > main_lua.h
