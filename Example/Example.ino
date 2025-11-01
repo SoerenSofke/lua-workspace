@@ -28,5 +28,5 @@ void loop()
 
     pixels.setPixelColor(0, pixels.Color(0, 0, 0));
     pixels.show();
-    delay(add(200, 0));
+    delay(add(200, 200));
 }
