@@ -14,6 +14,10 @@ curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.
 # Compile Arduino Application
  ./bin/arduino-cli compile --output-dir . --fqbn esp32:esp32:adafruit_feather_esp32s3 --build-property "compiler.cpp.extra_flags=-IExample/include -IExample/src -std=c++17" Example
 
+# Flash to MCU
+nix-shell -p esptool
+esptool.py --chip esp32s3 --port /dev/ttyACM0 --baud 921600 --before default_reset --after hard_reset write_flash 0x0 Example.ino.merged.bin
+
 # Convert Lua-script to C-header
 xxd -i main.lua > main_lua.h
 
